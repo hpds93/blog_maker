@@ -1,0 +1,9 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <form action="{% url 'myapp:new_blog' %}" method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button name="submit">Create blog</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<form action="{% url 'myapp:edit_post' post_id %}" method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button name="submit">Save changes</button>
+</form>
+{% endblock content %}
